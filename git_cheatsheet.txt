@@ -1,0 +1,54 @@
+# check current branch and status
+git status
+git branch
+
+# to test out new changes, create and switch to a new branch, let's say we call it "experimental"
+# this will shift any future commits to "experimental" branch on this cloned repo
+git checkout -b experimental
+
+# Push the new branch to remove (-u --> links local to remote branch, so later dont have to continuously push to origin/experimental
+git push -u origin experimental
+
+# When a stable code is reached
+git checkout main
+git pull origin main
+git merge experimental
+git push origin main
+
+# return back to experimental
+git checkout experimental
+
+# Keep "experimental" branch up-to-date
+# in case "main" gets ahead...
+git pull origin experimental
+git merge main
+# or
+# git rebase main # cleaner
+
+# delete a local branch that might not be needed anymore
+git branch -d experimental
+git push origin --delete experimental # deletes the remote branch
+
+
+
+# --- Typical Workflow ---
+main:         A -- B -- C ---- D
+                    \        /
+experimental:        E ---- F (something stable) ---- G ---- H
+
+# --- rebase ---
+1)
+main:        A --- B --- C
+                 \
+experimental:      D --- E
+
+2)
+main:        A --- B --- C --- F
+                 \
+experimental:      D --- E
+
+3)
+main:        A --- B --- C --- F
+                                   \
+experimental (rebased):              D' --- E'
+
