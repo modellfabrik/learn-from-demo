@@ -126,7 +126,6 @@ class BallSimulation:
                     push_fn(self.ball_id, step)
                 except Exception as e:
                     print(f"Error in {push_fn.__name__} at step {step}: {e}")
-
             p.stepSimulation()
 
             ball_pos, _ = p.getBasePositionAndOrientation(self.ball_id)

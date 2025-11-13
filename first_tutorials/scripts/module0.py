@@ -1,7 +1,9 @@
 import pybullet as p
 
 """
- For axes reference: x - red, y - green, z - blue
+Reference Info:
+
+For axes: x - red, y - green, z - blue
 pos, orn = p.getBasePositionAndOrientation(ball_id)     # position (x,y,z), orientation (quaternion)
 lin_vel, ang_vel = p.getBaseVelocity(ball_id)           # linear and angular velocities
 
