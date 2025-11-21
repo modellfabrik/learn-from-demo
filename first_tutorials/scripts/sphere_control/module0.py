@@ -21,7 +21,7 @@ def push0(ball_id, step):
             p.applyExternalForce(
                 ball_id,                # bodyUniqueId: the ID of the object you want to apply the force to
                 -1,                     # linkIndex: -1 means apply force to the base link (for single-link objects)
-                forceObj=[1, 5, 0],     # The force vector (Fx, Fy, Fz) in Newtons
+                forceObj=[5, 5, 0],     # The force vector (Fx, Fy, Fz) in Newtons
                 posObj=[0, 0, 0],       # The point of application of the force relative to the link’s frame
                 flags=p.WORLD_FRAME     # Frame in which the force is defined. Can also use p.LINK_FRAME. Keep World frame for now
             )
@@ -29,7 +29,7 @@ def push0(ball_id, step):
             p.applyExternalForce(
             ball_id,
             -1,
-            forceObj=[-5, -5, 0],  
+            forceObj=[-1, -1, 0],  
             posObj=[0, 0, 0],      
             flags=p.WORLD_FRAME     
             )

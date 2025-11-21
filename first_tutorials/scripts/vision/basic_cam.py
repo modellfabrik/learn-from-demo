@@ -4,7 +4,8 @@ import numpy as np
 
 # setup folder dir to save images
 folder_name = "images"
-os.makedirs(os.path.join(os.path.dirname(os.path.abspath(__file__)), folder_name), exist_ok=True)
+images_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), folder_name)
+#os.makedirs(os.path.join(os.path.dirname(os.path.abspath(__file__)), folder_name), exist_ok=True)
 
 """ function 1: basic webcam stream """
 def stream_webcam():
@@ -178,10 +179,10 @@ def stream_edges():
 
 if __name__ == "__main__":
 
-    """ call/uncomment 1 function at a time """
-    stream_webcam()
+    """ call 1 function at a time """
+    #stream_webcam()
     #capture_frame()
     #stream_other_formats()
-    #stream_and_capture()
+    stream_and_capture()
     #stream_with_shapes()
     #stream_edges()
