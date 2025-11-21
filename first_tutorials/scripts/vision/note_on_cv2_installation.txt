@@ -1,0 +1,6 @@
+# install with
+conda install -c conda-forge opencv=4.11.0=qt6_py310h2237cdb_606
+
+OPTIONAL:
+# check packages
+conda search -c conda-forge opencv | grep py310
