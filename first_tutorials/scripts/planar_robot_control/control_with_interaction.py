@@ -69,5 +69,5 @@ def control_robot():
         print("FK End-Effector Orientation (quat):", ee_orn)
 
 if __name__ == "__main__":
-    #add_ball()
+    add_ball()
     control_robot()

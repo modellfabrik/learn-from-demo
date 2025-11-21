@@ -6,7 +6,7 @@ import os
 # setup und connect to PyBullet
 physicsClient = p.connect(p.GUI)  # or p.DIRECT for non-graphical
 p.setAdditionalSearchPath(pybullet_data.getDataPath())
-p.setGravity(0, 0, -10)
+p.setGravity(0, 0, -9.81)
 
 # load urdf with fixed base
 # Robot origin pos
@@ -27,7 +27,7 @@ for i in range(num_joints):
     print(f"Joint {i}: {info[1].decode('utf-8')}")  # prints joint names
 
 # set target positions for joints
-target_positions = [0.5, -0.5]  # radians for joint 0 and joint 1
+target_positions = [0.7, 1.3]  # radians for joint 0 and joint 1
 
 # endless simulation loop
 try:
